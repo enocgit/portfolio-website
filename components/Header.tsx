@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import navMenus from "@/content/header/navMenus";
 import { useState } from "react";
 import Link from "next/link";
+import { FaBars, FaHamburger } from "react-icons/fa";
 
 type Props = {};
 
@@ -20,7 +21,7 @@ const Header = (props: Props) => {
 
   return (
     <header className="sticky top-0 z-50 flex items-center justify-center h-20 bg-white bg-opacity-95 backdrop-blur-sm">
-      <div className="flex justify-between w-10/12">
+      <div className="flex items-center justify-between w-10/12">
         <section className="flex items-center gap-3">
           {/* Profile image */}
           <div className="relative w-5 h-5">
@@ -32,7 +33,7 @@ const Header = (props: Props) => {
           </div>
         </section>
         {/* Nav */}
-        <nav>
+        <nav className="hidden lg:inline-flex">
           <ul className="flex items-center gap-14">
             {navMenus.map((navMenu) => {
               const { id, name, link } = navMenu;
@@ -51,6 +52,7 @@ const Header = (props: Props) => {
             })}
           </ul>
         </nav>
+        <FaBars className="inline-flex lg:hidden" />
       </div>
     </header>
     // Landing page

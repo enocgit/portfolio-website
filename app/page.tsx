@@ -6,9 +6,7 @@ import {
   FaArrowRight,
   FaEnvelope,
   FaGithub,
-  FaJs,
   FaLinkedin,
-  FaPhone,
   FaPhoneAlt,
 } from "react-icons/fa";
 import servicesOffered from "@/content/services/servicesOffered";
@@ -26,7 +24,7 @@ export default function Home() {
           className="min-h-[35rem] bg-primary text-white py-40 landing"
           id="home"
         >
-          <div className="space-y-6">
+          <div className="space-y-6 translate-y-[-20%] lg:translate-y-0">
             <h1 className="max-w-2xl text-4xl font-black text-tertiary">
               Discover Your Dream Career with my Skills and Expertise
             </h1>
@@ -42,7 +40,7 @@ export default function Home() {
         {/* Who I am */}
         <Section className="text-white bg-secondary-100" id="about">
           <div className="flex">
-            <div className="space-y-4">
+            <div className="space-y-4 translate-y-[-20%] lg:translate-y-0">
               <h1 className="text-3xl font-extrabold text-tertiary">
                 Who I am
               </h1>
@@ -85,13 +83,13 @@ export default function Home() {
         <Section className="bg-primary/90" id="services">
           <div className="space-y-4">
             <h1 className="text-3xl font-extrabold text-white">What I Offer</h1>
-            <ul className="flex gap-10">
+            <ul className="flex flex-wrap gap-10">
               {servicesOffered.map((service) => {
                 const { id, title, description, image } = service;
                 return (
                   <li
                     key={id}
-                    className="bg-primary min-h-[20rem] w-72 p-8 space-y-5 rounded-lg"
+                    className="flex-grow bg-primary min-h-[20rem] w-[18rem] p-8 space-y-5 rounded-lg"
                   >
                     <h3 className="font-bold text-white capitalize">{title}</h3>
                     <div className="relative">
@@ -104,7 +102,7 @@ export default function Home() {
                       />
                       <div className="absolute top-0 w-16 h-16 rounded-full right-28 bg-neutral-700/30"></div>
                     </div>
-                    <small className="inline-block max-w-xl text-white/60">
+                    <small className="inline-block max-w-md text-white/60">
                       {description}
                     </small>
                     <FaArrowRight className="text-white/60" />
@@ -114,7 +112,7 @@ export default function Home() {
             </ul>
           </div>
         </Section>
-        {/* Portfolio */}
+        {/* Skills */}
         <Section id="skills">
           <div className="space-y-8">
             <div>
@@ -123,7 +121,7 @@ export default function Home() {
               </h1>
               <h2 className="text-center">In-Depth Look at my Proficiencies</h2>
             </div>
-            <ul className="flex items-center justify-center gap-x-20 gap-y-10">
+            <ul className="flex items-center justify-center gap-x-20 gap-y-10 overflow-scroll">
               {skills.map((skill) => {
                 const { id, name, percentageNum, image, icon } = skill;
                 return (
@@ -153,10 +151,10 @@ export default function Home() {
           </div>
         </Section>
         {/* Contact */}
-        <section className="h-[35rem]" id="contact">
-          <div className="grid min-h-full grid-cols-2">
+        <section className="min-h-[35rem] lg:h-[35rem]" id="contact">
+          <div className="grid min-h-full lg:grid-cols-2">
             <div className="min-h-full pt-32 pb-10 text-white bg-primary">
-              <div className="flex flex-col items-center justify-end gap-32 translate-y-[20%]">
+              <div className="flex flex-col items-center justify-end gap-32  lg:translate-y-[20%]">
                 <Image
                   src="/svg/contact-illustration.svg"
                   alt="contact"
@@ -176,8 +174,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            {/* form */}
             <div
-              className="relative min-h-full p-10 text-neutral-800"
+              className="relative min-h-[120%] lg:min-h-full p-10 text-neutral-800"
               id="form-area"
             >
               <h1 className="text-3xl font-black">Let&apos;s Connect</h1>

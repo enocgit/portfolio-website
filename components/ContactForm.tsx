@@ -42,7 +42,7 @@ const ContactForm = (props: Props) => {
   };
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-2 gap-5 mt-10">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-5 mt-10 sm:grid-cols-2">
         <FormField
           control={form.control}
           name="name"
@@ -95,7 +95,7 @@ const ContactForm = (props: Props) => {
             </FormItem>
           )}
         />
-        <Button type="submit" className="translate-y-[-70%] bg-gradient-to-r from-secondary-100 to-secondary-200">Submit</Button>
+        <Button type="submit" className="mt-10 lg:mt-0 lg:translate-y-[-70%] bg-gradient-to-r from-secondary-100 to-secondary-200">Submit</Button>
       </form>
     </Form>
   );

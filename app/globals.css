@@ -24,3 +24,11 @@
     width: 100%;
     @apply bg-primary
 }
+
+.skills-slider .swiper-pagination-bullet-active {
+    background-color: #222;
+}
+
+.project-card .swiper-pagination-bullet-active {
+    @apply bg-secondary-100
+}

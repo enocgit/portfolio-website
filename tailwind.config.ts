@@ -25,6 +25,9 @@ module.exports = {
         },
         tertiary: "#D0F4E6",
       },
+      gridTemplateColumns: {
+        "autofit-project-card": "repeat(auto-fit, minmax(400px, 1fr))",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },

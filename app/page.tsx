@@ -10,9 +10,11 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import servicesOffered from "@/content/services/servicesOffered";
-import skills from "@/content/skills/skills";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import SkillsSlider from "@/components/SkillsSlider";
+import portfolio from "@/content/portfolio/portfolio";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   return (
@@ -39,7 +41,7 @@ export default function Home() {
         </Section>
         {/* Who I am */}
         <Section className="text-white bg-secondary-100" id="about">
-          <div className="flex">
+          <div className="flex flex-col items-end gap-y-5 gap-x-20 md:flex-row md:items-start">
             <div className="space-y-4 translate-y-[-20%] lg:translate-y-0">
               <h1 className="text-3xl font-extrabold text-tertiary">
                 Who I am
@@ -58,7 +60,16 @@ export default function Home() {
                 <span className="font-bold text-tertiary">life.</span>
               </p>
             </div>
-            <div></div>
+            <div>
+              <div className="relative w-52 h-80">
+                <Image
+                  src="/svg/wiam-vector.svg"
+                  alt="male with laptop"
+                  fill
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+            </div>
           </div>
         </Section>
         {/* Showcase of Expertise */}
@@ -70,12 +81,22 @@ export default function Home() {
               </h1>
               <h2 className="text-center">A collection of my Latest Works</h2>
             </div>
-            <ul className="flex flex-wrap gap-10">
-              <li className="w-40 h-40 rounded-lg bg-secondary-200"></li>
-              <li className="w-40 h-40 rounded-lg bg-secondary-200"></li>
-              <li className="w-40 h-40 rounded-lg bg-secondary-200"></li>
-              <li className="w-40 h-40 rounded-lg bg-secondary-200"></li>
-              <li className="w-40 h-40 rounded-lg bg-secondary-200"></li>
+            <ul className="grid gap-10 grid-col-1 sm:grid-cols-autofit-project-card">
+              {portfolio.map((project) => {
+                const { id, href, images, projectName, projectType, stack } =
+                  project;
+                return (
+                  <li key={id} className="min-w-full min-h-40">
+                    <ProjectCard
+                      projectName={projectName}
+                      projectType={projectType}
+                      stack={stack as "Front-End" | "Fullstack" | "Back-End"}
+                      href={href}
+                      images={images}
+                    />
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </Section>
@@ -121,33 +142,9 @@ export default function Home() {
               </h1>
               <h2 className="text-center">In-Depth Look at my Proficiencies</h2>
             </div>
-            <ul className="flex items-center justify-center gap-x-20 gap-y-10 overflow-scroll">
-              {skills.map((skill) => {
-                const { id, name, percentageNum, image, icon } = skill;
-                return (
-                  <li
-                    key={id}
-                    className="flex flex-col items-center gap-y-2 text-neutral-800"
-                  >
-                    {icon ? (
-                      icon
-                    ) : (
-                      <Image
-                        src={`svg/${image}`}
-                        alt={name.toLowerCase()}
-                        height={40}
-                        width={40}
-                      />
-                    )}
-
-                    <h3 className="text-sm">{name}</h3>
-                    <h3 className="font-semibold" title="proficiency level">
-                      {percentageNum}%
-                    </h3>
-                  </li>
-                );
-              })}
-            </ul>
+            <div className="w-full h-40">
+              <SkillsSlider />
+            </div>
           </div>
         </Section>
         {/* Contact */}
@@ -163,13 +160,13 @@ export default function Home() {
                 />
                 <div className="flex gap-5">
                   <Link href="https://github.com/enocgit" target="_blank">
-                    <FaGithub className="text-4xl" />
+                    <FaGithub className="text-4xl hover:translate-y-[-20%] transition-transform" />
                   </Link>
                   <Link
                     href="https://www.linkedin.com/in/enoch-ansah"
                     target="_blank"
                   >
-                    <FaLinkedin className="text-4xl" />
+                    <FaLinkedin className="text-4xl hover:translate-y-[-20%] transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -182,10 +179,18 @@ export default function Home() {
               <h1 className="text-3xl font-black">Let&apos;s Connect</h1>
               <ContactForm />
               <div className="relative z-10 flex items-center justify-end gap-5 translate-y-[220%]">
-                <Link href="tel:0553219740" target="_blank" className="grid w-10 h-10 bg-white rounded-full place-items-center">
+                <Link
+                  href="tel:0553219740"
+                  target="_blank"
+                  className="grid w-10 h-10 bg-white rounded-full place-items-center"
+                >
                   <FaPhoneAlt className="text-xl bg-transparent" />
                 </Link>
-                <Link href="enocansah@gmail.com" target="_blank" className="grid w-10 h-10 bg-white rounded-full place-items-center">
+                <Link
+                  href="enocansah@gmail.com"
+                  target="_blank"
+                  className="grid w-10 h-10 bg-white rounded-full place-items-center"
+                >
                   <FaEnvelope className="text-xl bg-transparent" />
                 </Link>
               </div>

@@ -1,28 +1,28 @@
 const navMenus = [
     {
         id: 1,
-        name: "Home",
-        link: "/#home"
+        label: "Home",
+        href: "/#home"
     },
     {
         id: 2,
-        name: "About",
-        link: "/#about"
+        label: "About",
+        href: "/#about"
     },
     {
         id: 3,
-        name: "Portfolio",
-        link: "/#portfolio"
+        label: "Portfolio",
+        href: "/#portfolio"
     },
     {
         id: 4,
-        name: "Services",
-        link: "/#services"
+        label: "Services",
+        href: "/#services"
     },
     {
         id: 5,
-        name: "Contact",
-        link: "/#contact"
+        label: "Contact",
+        href: "/#contact"
     },
 ]
 

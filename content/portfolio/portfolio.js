@@ -4,7 +4,7 @@ const portfolio = [
     projectName: "Rent Right",
     projectType: "Real Estate website",
     stack: "Front-End",
-    href: "rr-web-three.vercel.app",
+    href: "https://rr-web-three.vercel.app",
     images: [
       "/png/rr/1.png",
       "/png/rr/2.png",
@@ -19,7 +19,7 @@ const portfolio = [
     projectName: "Clickbuy",
     projectType: "E-commerce website",
     stack: "Full-stack",
-    href: "clickbuy.vercel.app",
+    href: "https://clickbuy.vercel.app",
     images: [
       "/png/clickbuy/1a.png",
       "/png/clickbuy/1b.png",
@@ -39,7 +39,7 @@ const portfolio = [
     projectName: "Wheatear Capital",
     projectType: "Business website",
     stack: "Full-stack",
-    href: "wheatear-capital.vercel.app",
+    href: "https://wheatear-capital.vercel.app",
     images: [
       "/png/wheatear-capital/1.png",
       "/png/wheatear-capital/2.png",
@@ -53,7 +53,7 @@ const portfolio = [
     projectName: "Intrepid Housing Solutions",
     projectType: "Real Estate website",
     stack: "Front-End",
-    href: "intrepid-housing-solutions-demo.vercel.app",
+    href: "https://intrepid-housing-solutions-demo.vercel.app",
     images: [
       "/png/intrepid/1.png",
       "/png/intrepid/2.png",
@@ -68,7 +68,7 @@ const portfolio = [
     projectName: "Victorious Living Church",
     projectType: "Management website",
     stack: "Full-stack",
-    href: "vlchurch-international.onrender.com",
+    href: "https://vlchurch-international.onrender.com",
     images: [
       "/png/vlc-international/1.png",
       "/png/vlc-international/2.png",

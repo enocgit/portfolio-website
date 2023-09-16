@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Image from "next/image";
 import { Button } from "antd";
 import Section from "@/components/Section";
@@ -15,6 +14,7 @@ import ContactForm from "@/components/ContactForm";
 import SkillsSlider from "@/components/SkillsSlider";
 import portfolio from "@/content/portfolio/portfolio";
 import ProjectCard from "@/components/ProjectCard";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (

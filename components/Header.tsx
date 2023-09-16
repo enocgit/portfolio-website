@@ -1,14 +1,23 @@
 "use client";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import navMenus from "@/content/header/navMenus";
 import { useState } from "react";
-import Link from "next/link";
-import { FaBars, FaHamburger } from "react-icons/fa";
+import navMenus from "@/content/header/navMenus";
 
-type Props = {};
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  Button,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+} from "@nextui-org/react";
+import { usePathname } from "next/navigation";
 
-const Header = (props: Props) => {
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
+
   const pathname = usePathname();
   // USESTATE
   // const [active, setActive] = useState<boolean>(false)
@@ -19,26 +28,31 @@ const Header = (props: Props) => {
     setMenuId(e.currentTarget.dataset.id);
   };
 
+  const handleMenuItemClick = () => {
+    setIsMenuOpen(false)
+  }
+
+
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-center h-20 bg-white bg-opacity-95 backdrop-blur-sm">
-      <div className="flex items-center justify-between w-10/12">
-        <section className="flex items-center gap-3">
-          {/* Profile image */}
-          <div className="relative w-5 h-5">
-            <Image src="" alt="" fill style={{ objectFit: "cover" }} />
-          </div>
-          {/* Name */}
-          <div>
-            <h1>Enoch Ansah</h1>
-          </div>
-        </section>
-        {/* Nav */}
-        <nav className="hidden lg:inline-flex">
-          <ul className="flex items-center gap-14">
-            {navMenus.map((navMenu) => {
-              const { id, name, link } = navMenu;
-              return (
-                <li
+    <Navbar onMenuOpenChange={setIsMenuOpen}>
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="md:hidden"
+        />
+        <NavbarBrand>
+          {/* <p>picture</p> */}
+          <p className="font-bold text-inherit">Enoch Ansah</p>
+        </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent className="hidden md:flex gap-4" justify="center">
+        {navMenus.map((menu) => {
+          const { id, href, label } = menu;
+          return (
+            <NavbarItem key={id}>
+              <Link color="foreground" href={href}>
+                <div
                   key={id}
                   className={`${
                     id == menuId && "bg-secondary-100 text-white rounded-full"
@@ -46,16 +60,31 @@ const Header = (props: Props) => {
                   data-id={id}
                   onClick={handleMenuId}
                 >
-                  <Link href={link}>{name}</Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-        <FaBars className="inline-flex lg:hidden" />
-      </div>
-    </header>
-    // Landing page
+                  <p>{label}</p>
+                </div>
+              </Link>
+            </NavbarItem>
+          );
+        })}
+      </NavbarContent>
+      <NavbarMenu>
+        {navMenus.map((menu) => {
+          const { id, label, href } = menu;
+          return (
+            <NavbarMenuItem key={id} onClick={handleMenuItemClick}>
+              <Link
+                className="w-full"
+                href={href}
+                size="lg"
+                onClick={handleMenuItemClick}
+              >
+                {label}
+              </Link>
+            </NavbarMenuItem>
+          );
+        })}
+      </NavbarMenu>
+    </Navbar>
   );
 };
 

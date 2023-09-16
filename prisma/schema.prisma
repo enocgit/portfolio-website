@@ -2,30 +2,43 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("DATABASE_URL")
+// }
+
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "mongodb"
+  url      = env("DATABASE_URL_MONGO")
 }
 
-model students {
-  id        Int     @id @default(autoincrement())
-  name      String  @db.VarChar(255)
-  age       Int?
-  programme String? @db.VarChar(255)
-}
+// model students {
+//   id        Int     @id @default(autoincrement())
+//   name      String  @db.VarChar(255)
+//   age       Int?
+//   programme String? @db.VarChar(255)
+// }
 
-model Pet {
-  id           String   @id @default(uuid())
-  name         String
-  isVaccinated Boolean?
-  veterinarian     Veterinarian @relation(fields: [veterinarianId], references: [id])
-  veterinarianId   String
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-}
+// model Pet {
+//   id           String   @id @default(uuid())
+//   name         String
+//   isVaccinated Boolean?
+//   veterinarian     Veterinarian @relation(fields: [veterinarianId], references: [id])
+//   veterinarianId   String
+//   createdAt    DateTime @default(now())
+//   updatedAt    DateTime @updatedAt
+// }
 
-model Veterinarian {
-  id   String @id @default(uuid())
-  name String
-  Pet  Pet[]
+// model Veterinarian {
+//   id   String @id @default(uuid())
+//   name String
+//   Pet  Pet[]
+// }
+
+model Message {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  telephone String
+  name      String
+  email     String
+  message   String
 }

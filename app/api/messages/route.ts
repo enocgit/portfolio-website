@@ -11,6 +11,6 @@ export async function POST (request: NextRequest) {
         })
         return new NextResponse(JSON.stringify(message), {status: 201})
     } catch (error) {
-        return new NextResponse(JSON.stringify({error}))
+    return new NextResponse(JSON.stringify({error}))
     }
 }

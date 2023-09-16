@@ -44,7 +44,7 @@ const ContactForm = (props: Props) => {
 
   const onSubmit = async (values: z.infer<typeof FormSchema>) => {
     try {
-      const res = await fetch("http://localhost:3000/api/messages", {
+      const res = await fetch("https://enocprogrammer.vercel.app:3000/api/messages", {
         method: "POST",
         body: JSON.stringify(values),
       });
@@ -55,7 +55,6 @@ const ContactForm = (props: Props) => {
       }
 
       const data = await res.json();
-      form.reset()
       return data;
     } catch (error) {
       // Handle fetch or parsing errors here

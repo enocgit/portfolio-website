@@ -10,7 +10,7 @@ const servicesOffered = [
     id: 2,
     title: "E-Commerce Solutions",
     description:
-      "Provide custom-tailored web development solutions that meet your unique business needs and goals.",
+      "Build and optimize online stores that drive sales and grow your business.",
     image: "/svg/ec-illustration.svg"
   },
   

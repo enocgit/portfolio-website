@@ -1,4 +1,2 @@
-export const HOST =
-  process.env.NODE_ENV == "production"
-    ? "https://enocprogrammer.vercel.app:3000"
-    : "http://localhost:3000";
+export const HOST = "https://enocprogrammer.vercel.app:3000"
+// export const HOST = "http://localhost:3000";

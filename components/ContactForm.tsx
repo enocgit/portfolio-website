@@ -48,8 +48,6 @@ const ContactForm = (props: Props) => {
     setIsSubmitting(true);
   };
 
-  const formRef = useRef(null);
-
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -63,7 +61,7 @@ const ContactForm = (props: Props) => {
   const onSubmit = async (values: z.infer<typeof FormSchema>) => {
     try {
       setIsSubmitting(true);
-      const res = await fetch(`${HOST}/api/messages`, {
+      const res = await fetch(`${HOST}/api/messages/`, {
         method: "POST",
         body: JSON.stringify(values),
       });
@@ -83,7 +81,7 @@ const ContactForm = (props: Props) => {
       setIsSubmitting(false);
       form.reset();
     } catch (error) {
-      toast("Couldn't send message", {
+      toast("An error occurred", {
         icon: <FaSadTear className="text-red-400" />,
       });
       setIsSubmitting(false);
@@ -93,7 +91,7 @@ const ContactForm = (props: Props) => {
   };
   return (
     <>
-      <Toaster position="bottom-center" />
+      <Toaster position="bottom-center" toastOptions={{duration: 5000}} />
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}

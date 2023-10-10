@@ -17,7 +17,7 @@ const portfolio = [
     projectName: "GetLinked",
     projectType: "getLinked website",
     stack: "Front-End",
-    href: "https://linked-blue.vercel.app",
+    href: "https://getlinked-blue.vercel.app",
     images: [
       "/png/getLinked/1.png",
       "/png/getLinked/2.png",

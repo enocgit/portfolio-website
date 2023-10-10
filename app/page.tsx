@@ -32,8 +32,8 @@ export default function Home() {
             </h1>
             <h2>Designing for the user, building for success</h2>
             <div className="flex gap-5">
-              <Button className="bg-white">Hire me</Button>
-              <Button className="text-white bg-secondary-100 border-tertiary hover:text-tertiary hover:border-tertiary">
+              <Button className="bg-white" href="/#contact" >Hire me</Button>
+              <Button className="text-white bg-secondary-100 border-tertiary hover:text-tertiary hover:border-tertiary" href="/#portfolio">
                 Portfolio
               </Button>
             </div>

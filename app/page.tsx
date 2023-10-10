@@ -83,10 +83,10 @@ export default function Home() {
             </div>
             <ul className="grid gap-10 grid-col-1 sm:grid-cols-autofit-project-card">
               {portfolio.map((project) => {
-                const { id, href, images, projectName, projectType, stack } =
+                const { href, images, projectName, projectType, stack } =
                   project;
                 return (
-                  <li key={id} className="min-w-full min-h-40">
+                  <li key={projectName} className="min-w-full min-h-40">
                     <ProjectCard
                       projectName={projectName}
                       projectType={projectType}

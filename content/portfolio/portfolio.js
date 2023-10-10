@@ -1,6 +1,5 @@
 const portfolio = [
   {
-    id: 1,
     projectName: "Rent Right",
     projectType: "Real Estate website",
     stack: "Front-End",
@@ -15,7 +14,18 @@ const portfolio = [
     ],
   },
   {
-    id: 2,
+    projectName: "GetLinked",
+    projectType: "getLinked website",
+    stack: "Front-End",
+    href: "https://linked-blue.vercel.app",
+    images: [
+      "/png/getLinked/1.png",
+      "/png/getLinked/2.png",
+      "/png/getLinked/3.png",
+      "/png/getLinked/4.png",
+    ],
+  },
+  {
     projectName: "Clickbuy",
     projectType: "E-commerce website",
     stack: "Full-stack",
@@ -35,7 +45,6 @@ const portfolio = [
     ],
   },
   {
-    id: 3,
     projectName: "Wheatear Capital",
     projectType: "Business website",
     stack: "Full-stack",
@@ -49,7 +58,6 @@ const portfolio = [
     ],
   },
   {
-    id: 4,
     projectName: "Intrepid Housing Solutions",
     projectType: "Real Estate website",
     stack: "Front-End",
@@ -64,7 +72,6 @@ const portfolio = [
     ],
   },
   {
-    id: 5,
     projectName: "Victorious Living Church",
     projectType: "Management website",
     stack: "Full-stack",
